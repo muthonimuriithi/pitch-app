@@ -6,3 +6,5 @@ start.sh
 /app/__pycache__
 
 .vscode/
+
+__pycache__/
