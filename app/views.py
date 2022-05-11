@@ -1,16 +1,18 @@
 from flask import render_template
 from app.main import auth
-from .models import Pitch
+# from app.models.models import Post, Comment, User, Upvote, Downvote
+
 
 
 @auth.route('/')
 def index():
-    pitches = Pitch.query.all()
-    job = Pitch.query.filter_by(category = 'Job').all() 
-    event = Pitch.query.filter_by(category = 'Events').all()
-    advertisement = Pitch.query.filter_by(category = 'Advertisement').all()
-    return render_template('index.html', job = job, event = event, pitches = pitches,advertisement= advertisement)
-
     
+    # posts = Post.query.all()
+    # product = Post.query.filter_by(category='product').all()
+    # idea = Post.query.filter_by(category='idea').all()
+    # business = Post.query.filter_by(category='Business').all()
+    # return render_template('index.html', business=business, product=product, idea=idea, posts=posts)
+
+    return render_template('index.html' )
 
    
