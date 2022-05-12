@@ -1,4 +1,4 @@
 from flask import Blueprint
-auth = Blueprint("auth",__name__)
+main = Blueprint("auth",__name__)
 
-from app import views
+from . import views
