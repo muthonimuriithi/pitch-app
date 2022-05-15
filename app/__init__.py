@@ -17,9 +17,10 @@ def create_app (environment):
     app = Flask(__name__)
     app.config.from_object(config_options[environment])
     db.init_app(app)
+    bootstrap.init_app(app)
     login_manager.init_app(app)
-    # from .auth import auth as auth_blueprint
-    # app.register_blueprint(auth_blueprint)
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
