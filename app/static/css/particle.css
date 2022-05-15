@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #23374d;
+    background-image: url('./app/static/images/eberhard-grossgasteiger-pBgnT4KH8d4-unsplash.jpg');
+}
+    
+
+/* #particles-js {
+background_repeat: no-repeat;
+background_size: cover;
+} */
+
+.navbar{
+background-color:#23374d;
+}
