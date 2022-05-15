@@ -1,47 +1,29 @@
- 
- {% block navbar %}
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark ">
-    <a class="navbar-brand" href="{{url_for('main.index')}}"><strong>Pich-World</strong> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-        aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand text-white" href="/" id="logo"style="font-size:40px">Pitch App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-white"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('main.index')}}">All Pitches</a>
-            </li>
-            {% if current_user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('main.new_pitch')}}">New Pitch</a>
-            </li>
-            {% endif %}
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            {% if current_user.is_authenticated %}
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style='margin-right:30px' data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                    <a class="dropdown-item" href="{{url_for('main.profile',name=current_user.username)}}"><i
-                            class="far fa-user"></i>&nbsp; My account</a>
-                    <a class="dropdown-item" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp;
-                        Log out</a>
-                </div>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/"> <span class="sr-only">(current)</span></a>
             </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('auth.login')}}" style='margin-right:30px'><i
-                        class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+                   <li class="nav-item">
+                <a class="nav-link login-text text-white" href="/login"style="font-size:30px;margin-right:40%">Login</a>
+            </li>
+                     <li class="nav-item">
+                <a class="nav-link login-text text-white" href="/user"style="font-size:30px;margin-right:20%">Profile</a>
             </li>
             <li class="nav-item">
-                <a style='margin-right:30px' class="nav-link" href="{{url_for('auth.signup')}}"><i
-                        class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
+                <a class="nav-link login-text text-white" href="/logout"style="font-size:30px;margin-left:10%">Logout</a>
             </li>
-            {% endif %}
+ 
+
+
         </ul>
     </div>
 </nav>
-{% endblock %}
