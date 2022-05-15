@@ -1,22 +1,22 @@
 {% extends 'base.html'%}
-
-{% block content %}
-    
-        <div  class="container" id="particles-js">
-                <h2 class="text-center" id="posts">All Pitches</h2>
-            <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
-                <li class="nav-item" >
-                    <a id ="cats" class="nav-link" data-toggle="tab" href="#all"><strong>All Pitches</strong> </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id ="cats" data-toggle="tab" href="#jobs">Job Pitches</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id ="cats" data-toggle="tab" href="#event">Event Pitches</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id ="cats"data-toggle="tab" href="#ads">Advert Pitches</a>
-                </li>
-            </ul>
-            
-{% endblock%}
+{% from 'pitch_display_macro.html' import display_pitches%}
+{% block content%}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename='css/particle.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+<div class="bgimage">
+    <div class="p-3 p-md-5 m-md-3 text-center bg-transparent">
+        <div class="col-md-12 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal text-dark"style="font-size:40px">The pitch:</h1>
+            <p class="lead font-weight-normal text-dark"style="font-size:40px">Make it happen in a minute.</p>
+            <p style="font-size:40px;color:black">Get to view, add a pitch, vote and leave a comment.</p>
+            <div id="buttons d-block mx-auto">
+                <a class="btn btn-outline-secondary text-dark" href="{{ url_for('main.new_post') }}"style="font-size:40px">New Pitch</a>
+                <a class="btn btn-outline-secondary text-dark" href="{{ url_for('main.posts') }}"style="font-size:40px">View Pitches</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}`
