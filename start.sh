@@ -1,4 +1,4 @@
-export SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://muriithi:muthoni@localhost/pitches'
+export DATABASE_URI='postgresql+psycopg2://muriithi:muthoni@localhost/pitches'
 export MAIL_USERNAME='loisemuthoni181@gmail.com'
 export MAIL_PASSWORD='0725408650'
 export SECRET_KEY='secret'
