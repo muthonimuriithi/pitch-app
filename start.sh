@@ -5,7 +5,7 @@ export SECRET_KEY='secret'
 
 # python3 run.py shell
 
-python3 run.py server
+python3 manage.py server
 
 
 # python run.py db init
