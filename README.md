@@ -32,6 +32,8 @@ or download the zip file from github.
 
 After extracting the files,
 
+or visit my application at: https://pitchmuthons.herokuapp.com/
+
 1. Navigate to the project folder
 cd gitSearch.
 
